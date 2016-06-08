@@ -190,8 +190,8 @@ var data_request = d3.json("data/all_data.json")
         $("#loading-modal").modal('hide');
         processData(data);
 
-        // zoom out a ways initially
-        zoomTo(0.5).event(container);
+        // zoom out at an even pace, approximating the zoom to fit on a laptop
+        zoomTo(0.43).event(container.transition().duration(4000));
 
         updateSlider();
     })
